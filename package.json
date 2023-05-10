@@ -1,0 +1,36 @@
+{
+  "name": "plasma-theme",
+  "displayName": "Plasma Theme",
+  "publisher": "Eclipter",
+  "description": "· A simple dark violet color theme 🌌",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eclipter/plasma-theme"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "Theme",
+    "Plasma",
+    "Dark",
+    "Violet",
+    "Purple",
+    "Eclipter"
+  ],
+  "pricing": "Free",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Plasma Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/plasma-color-theme.json"
+      }
+    ]
+  }
+}
