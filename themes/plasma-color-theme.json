@@ -169,15 +169,17 @@
   },
   "tokenColors": [
     {
-      "name": "Comment",
-      "scope": [
-        "comment",
-        "string.quoted.docstring.multi.python",
-        "string.quoted.docstring.multi.python punctuation.definition.string.begin.python",
-        "string.quoted.docstring.multi.python punctuation.definition.string.end.python"
-      ],
+      "name": "Basic sources",
+      "scope": ["source.dart", "source.python", "source.scala"],
       "settings": {
-        "foreground": "#e5e5e5",
+        "foreground": "#9900ff"
+      }
+    },
+    {
+      "name": "Comment",
+      "scope": "comment",
+      "settings": {
+        "foreground": "#e2e2e2",
         "fontStyle": "italic"
       }
     },
@@ -186,10 +188,11 @@
       "scope": [
         "string.quoted",
         "string.template",
-        "punctuation.definition.string"
+        "punctuation.definition.string",
+        "string.quoted.docstring.multi"
       ],
       "settings": {
-        "foreground": "#b8c3ff"
+        "foreground": "#ff58fc"
       }
     },
     {
@@ -225,14 +228,8 @@
       "name": "Parameter",
       "scope": "variable.parameter",
       "settings": {
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "name": "Storage (declaration or modifier keyword)",
-      "scope": ["storage.type", "storage.modifier"],
-      "settings": {
-        "foreground": "#e5d2ff"
+        "fontStyle": "italic",
+        "foreground": "#6a2eff"
       }
     },
     {
@@ -278,67 +275,17 @@
       }
     },
     {
-      "name": "HTML or XML tag",
-      "scope": "entity.name.tag",
+      "name": "Color",
+      "scope": "constant.other.color",
       "settings": {
-        "foreground": "#b78aff"
+        "foreground": "#f97e72"
       }
     },
     {
-      "name": "HTML or XML tag brackets",
-      "scope": ["punctuation.definition.tag"],
+      "name": "Font names",
+      "scope": "support.constant.font-name",
       "settings": {
-        "foreground": "#8de4ff"
-      }
-    },
-    {
-      "name": "Tag attribute",
-      "scope": "entity.other.attribute-name",
-      "settings": {
-        "foreground": "#ff3bef"
-      }
-    },
-    {
-      "name": "Tag attribute HTML",
-      "scope": "entity.other.attribute-name.html",
-      "settings": {
-        "foreground": "#77b7ff",
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "name": "Class",
-      "scope": ["entity.name.type", "meta.attribute.class.html"],
-      "settings": {
-        "foreground": "#fe4450"
-      }
-    },
-    {
-      "name": "Inherited class",
-      "scope": "entity.other.inherited-class",
-      "settings": {
-        "foreground": "#D50"
-      }
-    },
-    {
-      "name": "Function",
-      "scope": ["entity.name.function", "variable.function"],
-      "settings": {
-        "foreground": "#57dae4"
-      }
-    },
-    {
-      "name": "JS Export",
-      "scope": ["keyword.control.export.js", "keyword.control.import.js"],
-      "settings": {
-        "foreground": "#ff3bef"
-      }
-    },
-    {
-      "name": "JS Numerics",
-      "scope": ["constant.numeric.decimal.js"],
-      "settings": {
-        "foreground": "#ff607b"
+        "foreground": "#f97e72"
       }
     },
     {
@@ -346,13 +293,6 @@
       "scope": "keyword",
       "settings": {
         "foreground": "#7a53d4"
-      }
-    },
-    {
-      "name": "Control keyword",
-      "scope": "keyword.control",
-      "settings": {
-        "foreground": "#ff6969"
       }
     },
     {
@@ -402,7 +342,7 @@
       }
     },
     {
-      "name": "Object literal key / property",
+      "name": "Object literal key/property",
       "scope": ["meta.object-literal.key", "support.type.property-name"],
       "settings": {
         "foreground": "#7ab1f8"
@@ -432,21 +372,77 @@
         "foreground": "#72f1b8"
       }
     },
+    //——————————————————— HTML/XML ————————————————————
     {
-      "name": "CSS property",
-      "scope": [
-        "support.type.property-name.css",
-        "support.type.property-name.json"
-      ],
+      "name": "HTML/XML tag",
+      "scope": "entity.name.tag",
       "settings": {
-        "foreground": "#8ba6ff"
+        "foreground": "#b78aff"
       }
     },
+    {
+      "name": "HTML/XML tag brackets",
+      "scope": ["punctuation.definition.tag"],
+      "settings": {
+        "foreground": "#8de4ff"
+      }
+    },
+    {
+      "name": "Tag attribute",
+      "scope": "entity.other.attribute-name",
+      "settings": {
+        "foreground": "#ff3bef"
+      }
+    },
+    {
+      "name": "Tag attribute HTML",
+      "scope": "entity.other.attribute-name.html",
+      "settings": {
+        "foreground": "#77b7ff",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Class",
+      "scope": ["entity.name.type", "meta.attribute.class.html"],
+      "settings": {
+        "foreground": "#fe4450"
+      }
+    },
+    {
+      "name": "Inherited class",
+      "scope": "entity.other.inherited-class",
+      "settings": {
+        "foreground": "#D50"
+      }
+    },
+    {
+      "name": "Function",
+      "scope": ["entity.name.function", "variable.function"],
+      "settings": {
+        "foreground": "#57dae4"
+      }
+    },
+    //——————————————————— JS ————————————————————
     {
       "name": "JS Switch control",
       "scope": "switch-block.expr.js",
       "settings": {
         "foreground": "#72f1b8"
+      }
+    },
+    {
+      "name": "JS Export",
+      "scope": ["keyword.control.export.js", "keyword.control.import.js"],
+      "settings": {
+        "foreground": "#ff3bef"
+      }
+    },
+    {
+      "name": "JS Numerics",
+      "scope": ["constant.numeric.decimal.js"],
+      "settings": {
+        "foreground": "#ff607b"
       }
     },
     {
@@ -456,25 +452,22 @@
         "foreground": "#2ee2fa"
       }
     },
-    {
-      "name": "Color",
-      "scope": "constant.other.color",
-      "settings": {
-        "foreground": "#f97e72"
-      }
-    },
-    {
-      "name": "Font names",
-      "scope": "support.constant.font-name",
-      "settings": {
-        "foreground": "#f97e72"
-      }
-    },
+    //——————————————————— CSS ————————————————————
     {
       "name": "CSS #id",
       "scope": "entity.other.attribute-name.id",
       "settings": {
         "foreground": "#53abd4"
+      }
+    },
+    {
+      "name": "CSS property",
+      "scope": [
+        "support.type.property-name.css",
+        "support.type.property-name.json"
+      ],
+      "settings": {
+        "foreground": "#8ba6ff"
       }
     },
     {
@@ -494,6 +487,7 @@
         "foreground": "#d45353"
       }
     },
+    //——————————————————— MARKUP ————————————————————
     {
       "name": "Markup heading",
       "scope": ["markup.heading", "entity.name.section"],
@@ -537,6 +531,7 @@
         "foreground": "#f97e72"
       }
     },
+    //——————————————————— PYTHON ————————————————————
     {
       "name": "Python function call",
       "scope": "meta.function-call.generic.python",
@@ -545,12 +540,73 @@
       }
     },
     {
-      "name": "Python variable params",
+      "name": "Python class keyword",
+      "scope": ["storage.type.class.python"],
+      "settings": {
+        "foreground": "#ffc700",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Python import keyword",
+      "scope": "keyword.control.import",
+      "settings": {
+        "foreground": "#ff4343"
+      }
+    },
+    {
+      "name": "Python flow keyword",
+      "scope": "keyword.control.flow",
+      "settings": {
+        "foreground": "#ff6969"
+      }
+    },
+    {
+      "name": "Python separators",
+      "scope": [
+        "punctuation.separator.period.python",
+        "punctuation.separator.parameters.python"
+      ],
+      "settings": {
+        "foreground": "#ff67f0"
+      }
+    },
+    {
+      "name": "Python self variable",
+      "scope": [
+        "variable.language.special.self.python",
+        "variable.parameter.function.language.special.self.python"
+      ],
+      "settings": {
+        "foreground": "#526fff"
+      }
+    },
+    {
+      "name": "Python variable parameters",
       "scope": "variable.parameter.function-call.python",
       "settings": {
         "foreground": "#72f1b8"
       }
     },
+    {
+      "name": "Python decorator",
+      "scope": [
+        "punctuation.definition.decorator.python",
+        "support.type.python"
+      ],
+      "settings": {
+        "foreground": "#00ff85"
+      }
+    },
+    {
+      "name": "Python function keyword",
+      "scope": ["storage.type.function"],
+      "settings": {
+        "foreground": "#4200ea",
+        "fontStyle": "bold"
+      }
+    },
+    //——————————————————— C# ————————————————————
     {
       "name": "C# storage type",
       "scope": "storage.type.cs",
@@ -575,6 +631,7 @@
         "foreground": "#ff7edb"
       }
     },
+    //——————————————————— C ————————————————————
     {
       "name": "C placeholder",
       "scope": "constant.other.placeholder.c",
@@ -600,6 +657,7 @@
         "foreground": "#fe4450"
       }
     },
+    //——————————————————— C++ ————————————————————
     {
       "name": "C++ operators",
       "scope": "source.cpp keyword.operator",
@@ -632,6 +690,7 @@
         "foreground": "#fe4450"
       }
     },
+    //——————————————————— ELIXIR ————————————————————
     {
       "name": "Elixir Classes",
       "scope": [
@@ -684,6 +743,7 @@
         "fontStyle": "italic"
       }
     },
+    //——————————————————— CLOSURE ————————————————————
     {
       "name": "Clojure Globals",
       "scope": ["entity.global.clojure"],
@@ -722,6 +782,7 @@
         "foreground": "#ff7edbff"
       }
     },
+    //——————————————————— GO ————————————————————
     {
       "name": "Go basic",
       "scope": "source.go",
@@ -775,6 +836,7 @@
         "foreground": "#2EE2FA"
       }
     },
+    //——————————————————— MARKDOWN ————————————————————
     {
       "name": "Markdown links and image paths",
       "scope": [
@@ -827,13 +889,7 @@
         "foreground": "#72f1b8"
       }
     },
-    {
-      "name": "Basic source colours",
-      "scope": ["source.dart", "source.python", "source.scala"],
-      "settings": {
-        "foreground": "#c368ff"
-      }
-    },
+    //——————————————————— DART ————————————————————
     {
       "name": "Dart strings",
       "scope": ["string.interpolated.single.dart"],
@@ -855,6 +911,7 @@
         "foreground": "#2EE2FA"
       }
     },
+    //——————————————————— SCALA ————————————————————
     {
       "name": "Scala variable params",
       "scope": ["variable.parameter.scala"],
